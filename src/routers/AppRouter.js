@@ -1,10 +1,10 @@
 import React from "react";
 import NotFoundPage from "../components/404";
-import AddExpensePage from "../components/add";
-import EditExpensePage from "../components/edit";
-import ExpenseDashboardPage from "../components/dashboard";
+import PortfolioPage from "../components/portfolio";
+import PiecePage from "../components/piece";
+import HomePage from "../components/home";
+import ContactPage from "../components/contact";
 import Header from "../components/header";
-import HelpPage from "../components/help";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // Instead of using export
@@ -15,10 +15,10 @@ const AppRouter = () => (
             <Header />
         
             <Switch>
-                <Route path="/" component={ExpenseDashboardPage} exact={true}/>
-                <Route path="/create" component={AddExpensePage} />
-                <Route path="/edit/:id" component={EditExpensePage} />
-                <Route path="/help" component={HelpPage} />
+                <Route path="/" component={HomePage} exact={true}/>
+                <Route path="/portfolio/:id" component={PiecePage} />
+                <Route path="/portfolio" component={PortfolioPage} exact={true}/>
+                <Route path="/contact" component={ContactPage} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
